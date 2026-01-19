@@ -4,7 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a modern, minimalist portfolio template built with Astro and Tailwind CSS v4. It's designed to be easily customizable through a single configuration file while maintaining a clean, professional appearance.
+This is Piyush Bhandari's personal portfolio website - a modern, minimalist portfolio built with Astro and Tailwind CSS v4. It's designed to be easily customizable through a single configuration file while maintaining a clean, professional appearance.
+
+**Live Site**: https://piyushbhandaricode.github.io/
+**Repository**: https://github.com/piyushbhandaricode/piyushbhandaricode.github.io
 
 ## Tech Stack
 
@@ -62,3 +65,89 @@ The `src/config.ts` exports a `siteConfig` object with these sections:
 - projects: array of {name, description, link, skills}
 - experience: array of {company, title, dateRange, bullets}
 - education: array of {school, degree, dateRange, achievements}
+
+## Deployment
+
+This site is deployed to **GitHub Pages** using **GitHub Actions**.
+
+### Deployment Configuration
+
+1. **Repository Type**: User GitHub Pages site (username.github.io format)
+   - Repository name MUST match: `piyushbhandaricode.github.io`
+   - This allows the site to be hosted at the root domain without a base path
+
+2. **Astro Configuration** (`astro.config.mjs`):
+   ```javascript
+   export default defineConfig({
+     site: 'https://piyushbhandaricode.github.io',
+     vite: {
+       plugins: [tailwindcss()],
+     },
+   });
+   ```
+   - No `base` path is needed for user GitHub Pages sites
+   - `site` URL must match the GitHub Pages domain
+
+3. **GitHub Actions Workflow** (`.github/workflows/deploy.yml`):
+   - Triggers on push to `main` branch
+   - Also supports manual workflow dispatch
+   - Uses `withastro/action@v3` for building
+   - Deploys via `actions/deploy-pages@v4`
+   - Requires GitHub Pages to be enabled in repository settings
+
+### Deployment Process
+
+1. Push changes to `main` branch
+2. GitHub Actions automatically builds and deploys
+3. Site is live within 1-2 minutes
+4. Check deployment status: `gh run list --repo piyushbhandaricode/piyushbhandaricode.github.io`
+
+### Important Notes
+
+- **Never** change the repository name - it must stay `piyushbhandaricode.github.io`
+- **Never** add a `base` path to `astro.config.mjs` - user sites use root domain
+- The `.claude` directory is gitignored and contains sensitive local settings
+- All content updates should go through `src/config.ts` only
+
+## Git Workflow
+
+- Default branch: `main`
+- Remote: `git@github.com:piyushbhandaricode/piyushbhandaricode.github.io.git` (SSH)
+- Deployment: Automatic on push to main
+- Never commit `.claude/` directory (already in .gitignore)
+
+## File Structure
+
+```
+├── .github/
+│   └── workflows/
+│       └── deploy.yml       # GitHub Actions deployment workflow
+├── public/
+│   └── favicon.svg          # Site favicon
+├── src/
+│   ├── components/          # Astro components
+│   ├── pages/
+│   │   └── index.astro      # Main page
+│   ├── styles/
+│   │   └── global.css       # Global styles
+│   └── config.ts            # **SINGLE SOURCE OF TRUTH FOR ALL CONTENT**
+├── astro.config.mjs         # Astro & deployment configuration
+├── CLAUDE.md                # This file
+├── README.md                # User-facing documentation
+└── package.json             # Dependencies
+```
+
+## Content Updates
+
+**IMPORTANT**: When updating portfolio content:
+1. **ONLY** edit `src/config.ts` - never modify components directly for content changes
+2. Test locally with `npm run dev` before committing
+3. Commit and push to trigger automatic deployment
+4. Verify changes at https://piyushbhandaricode.github.io/
+
+## Current Portfolio Owner
+
+- **Name**: Piyush Bhandari
+- **Title**: IT Application Specialist - Developer Tools
+- **Focus**: Building and shipping reliable infrastructure for developers
+- **Experience**: 5+ years managing projects autonomously
