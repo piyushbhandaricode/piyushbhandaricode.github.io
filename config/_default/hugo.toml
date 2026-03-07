@@ -2,5 +2,9 @@ baseURL = "https://piyushbhandaricode.github.io/"
 title = "Piyush Bhandari"
 theme = "congo"
 
+[module]
+  [[module.imports]]
+    path = "congo"
+
 [author]
   name = "Piyush Bhandari"
