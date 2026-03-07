@@ -3,3 +3,4 @@ title = "Piyush Bhandari"
 theme = "congo"
 languageCode = "en"
 enableRobotsTXT = true
+enableEmoji = true
