@@ -11,11 +11,8 @@ This site now includes sample content so you can see a real Congo-powered blog s
 
 ## What You'll Find
 
-- Short write-ups on SRE and DevOps practices
-- Incident response and postmortem templates
-- Platform automation examples and deployment patterns
+Short write-ups on SRE and DevOps practices, incident response and postmortem templates, and platform automation examples.
 
 ## Start Here
 
-- [About](/about/)
-- [Blog](/posts/)
+Read more on the [About](/about/) and [Blog](/posts/) pages.
