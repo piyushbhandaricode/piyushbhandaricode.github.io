@@ -1,10 +1,5 @@
-baseURL = "https://piyushbhandaricode.github.io/"
+baseURL = "https://piyushbhandari.github.io/"
 title = "Piyush Bhandari"
 theme = "congo"
-
-[module]
-  [[module.imports]]
-    path = "congo"
-
-[author]
-  name = "Piyush Bhandari"
+languageCode = "en"
+enableRobotsTXT = true

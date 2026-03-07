@@ -1,6 +1,0 @@
-baseURL = "https://piyushbhandaricode.github.io/"
-title = "Piyush Bhandari | DevOps & SRE"
-theme = "congo"
-
-[author]
-  name = "Piyush Bhandari"
